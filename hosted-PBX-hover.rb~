@@ -23,6 +23,7 @@ puts "\nLogin			SUCCESS"
 sleep(8)
 puts "slept"
 #Hover over Hosted PBX
+wait = Selenium::WebDriver::Wait.new(:timeout => 20)
 wait.until { driver.find_element(:xpath, "//div[1]/div/div/div/ul[1]/li[6]/a") }
 el = driver.find_element(:xpath, "//div[1]/div/div/div/ul[1]/li[6]/a")
 driver.action.move_to(el).perform
@@ -31,12 +32,14 @@ puts "Hover HPBX		SUCCESS"
 sleep(1)
 puts "slept again"
 #Hover over Advanced
+wait = Selenium::WebDriver::Wait.new(:timeout => 20)
 wait.until { driver.find_element(:xpath, "//div[1]/div/div/div/ul[1]/li[6]/ul/li[6]/a") }
 driver.action.move_to(el).perform
 ele = driver.find_element(:xpath, "//div[1]/div/div/div/ul[1]/li[6]/ul/li[6]/a")
 driver.action.move_to(ele).perform
 puts "Hover ADV		SUCCESS"
 #Click Users
+wait = Selenium::WebDriver::Wait.new(:timeout => 20)
 wait.until { driver.find_element(:xpath, "//div[@id='ws-topbar']/ul[1]/li[6]/ul/li[6]/a") }
 driver.find_element(:xpath, "//div[@id='ws-topbar']/ul[1]/li[6]/ul/li[6]/a").click
 puts "Users			SUCCESS"
